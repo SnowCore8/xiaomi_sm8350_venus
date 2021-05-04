@@ -213,3 +213,5 @@ endmenu
 
 endmenu
 
+source "drivers/input/fingerprint/goodix_fod/Kconfig"
+
