@@ -2,6 +2,7 @@
 
 /*
  * Copyright (c) 2011-2021, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2020 XiaoMi, Inc.
  */
 
 #define pr_fmt(fmt) "%s: " fmt, __func__
@@ -41,6 +42,7 @@ struct soc_sleep_stats_data {
 	struct kobj_attribute ka;
 	void __iomem *reg;
 };
+
 
 struct entry {
 	__le32 stat_type;
@@ -183,6 +185,8 @@ static const struct of_device_id soc_sleep_stats_table[] = {
 	{ },
 };
 
+
+
 static int soc_sleep_stats_probe(struct platform_device *pdev)
 {
 	struct soc_sleep_stats_data *drv;
@@ -229,6 +233,8 @@ static int soc_sleep_stats_probe(struct platform_device *pdev)
 	}
 
 	platform_set_drvdata(pdev, drv);
+
+
 	return 0;
 }
 

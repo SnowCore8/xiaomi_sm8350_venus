@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-only
 /*
  * Copyright (c) 2016-2021, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2020 XiaoMi, Inc.
  */
 
 #include <linux/init.h>
@@ -47,6 +48,7 @@ enum event_idx {
 	CYC_EVENT,
 	NO_OF_EVENT
 };
+
 
 enum cpu_clusters {
 	MIN = 0,
@@ -108,6 +110,7 @@ static unsigned int aggr_top_load;
 static unsigned int top_load[CLUSTER_MAX];
 static unsigned int curr_cap[CLUSTER_MAX];
 static bool max_cap_cpus[NR_CPUS];
+
 static atomic_t game_status_pid;
 #endif
 static bool ready_for_freq_updates;
@@ -1134,6 +1137,7 @@ static const struct kernel_param_ops param_ops_splh_notification = {
 module_param_cb(splh_notif, &param_ops_splh_notification, &splh_notif, 0644);
 #endif /* CONFIG_QTI_PLH */
 
+#endif /* CONFIG_MSM_PERFORMANCE_QGKI */
 static int __init msm_performance_init(void)
 {
 #ifdef CONFIG_MSM_PERFORMANCE_QGKI
