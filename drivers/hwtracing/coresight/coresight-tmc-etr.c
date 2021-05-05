@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0
 /*
  * Copyright(C) 2016 Linaro Limited. All rights reserved.
+ * Copyright (C) 2020 XiaoMi, Inc.
  * Author: Mathieu Poirier <mathieu.poirier@linaro.org>
  */
 
@@ -1604,7 +1605,32 @@ static int tmc_enable_etr_sink_sysfs(struct coresight_device *csdev)
 	struct etr_buf *sysfs_buf = NULL, *new_buf = NULL, *free_buf = NULL;
 
 	spin_lock_irqsave(&drvdata->spinlock, flags);
-	if (drvdata->reading) {
+	sysfs_buf = READ_ONCE(drvdata->sysfs_buf);
+	if (!sysfs_buf || (sysfs_buf->size != drvdata->size)) {
+		spin_unlock_irqrestore(&drvdata->spinlock, flags);
+
+		if (drvdata->out_mode == TMC_ETR_OUT_MODE_MEM ||
+			(drvdata->byte_cntr->sw_usb &&
+			drvdata->out_mode == TMC_ETR_OUT_MODE_USB)) {
+			/*
+			 * ETR DDR memory is not allocated until user enables
+			 * tmc at least once. If user specifies different ETR
+			 * DDR size than the default size or switches between
+			 * contiguous or scatter-gather memory type after
+			 * enabling tmc; the new selection will be honored from
+			 * next tmc enable session.
+			 */
+			/* Allocate memory with the locks released */
+			free_buf = new_buf = tmc_etr_setup_sysfs_buf(drvdata);
+			if (IS_ERR(new_buf))
+				return -ENOMEM;
+			coresight_cti_map_trigout(drvdata->cti_flush, 3, 0);
+			coresight_cti_map_trigin(drvdata->cti_reset, 5, 0);
+		}
+		spin_lock_irqsave(&drvdata->spinlock, flags);
+	}
+
+	if (drvdata->reading || drvdata->mode == CS_MODE_PERF) {
 		ret = -EBUSY;
 		goto unlock_out;
 	}
