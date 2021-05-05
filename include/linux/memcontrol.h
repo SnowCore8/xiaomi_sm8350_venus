@@ -2,6 +2,7 @@
 /* memcontrol.h - Memory Controller
  *
  * Copyright IBM Corporation, 2007
+ * Copyright (C) 2020 XiaoMi, Inc.
  * Author Balbir Singh <balbir@linux.vnet.ibm.com>
  *
  * Copyright 2007 OpenVZ SWsoft Inc
