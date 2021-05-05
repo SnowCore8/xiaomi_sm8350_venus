@@ -3,6 +3,7 @@
  * xhci-plat.c - xHCI host controller driver platform Bus Glue.
  *
  * Copyright (C) 2012 Texas Instruments Incorporated - http://www.ti.com
+ * Copyright (C) 2020 XiaoMi, Inc.
  * Author: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
  *
  * A lot of code borrowed from the Linux xHCI driver.
@@ -485,6 +486,28 @@ static int __maybe_unused xhci_plat_runtime_suspend(struct device *dev)
 	return xhci_suspend(xhci, true);
 }
 
+static int xhci_plat_resume(struct device *dev)
+{
+	struct usb_hcd  *hcd = dev_get_drvdata(dev);
+	struct xhci_hcd *xhci = hcd_to_xhci(hcd);
+	int ret;
+
+	if (!xhci)
+		return 0;
+
+	dev_dbg(dev, "xhci-plat resume\n");
+
+	ret = xhci_priv_resume_quirk(hcd);
+	if (ret)
+		return ret;
+
+	ret = pm_runtime_resume(dev);
+	if (ret)
+		dev_err(dev, "failed to resume xhci-plat (%d)\n", ret);
+
+	return ret;
+}
+
 static int __maybe_unused xhci_plat_runtime_resume(struct device *dev)
 {
 	struct usb_hcd  *hcd = dev_get_drvdata(dev);
@@ -513,6 +536,8 @@ static const struct dev_pm_ops xhci_plat_pm_ops = {
 	.thaw		= xhci_plat_restore,
 	.poweroff	= xhci_plat_suspend,
 	.restore	= xhci_plat_restore,
+	SET_SYSTEM_SLEEP_PM_OPS(NULL, xhci_plat_resume)
+
 	SET_RUNTIME_PM_OPS(xhci_plat_runtime_suspend,
 			   xhci_plat_runtime_resume,
 			   xhci_plat_runtime_idle)
