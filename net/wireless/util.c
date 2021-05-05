@@ -3,6 +3,7 @@
  * Wireless utility functions
  *
  * Copyright 2007-2009	Johannes Berg <johannes@sipsolutions.net>
+ * Copyright (C) 2020 XiaoMi, Inc.
  * Copyright 2013-2014  Intel Mobile Communications GmbH
  * Copyright 2017	Intel Deutschland GmbH
  * Copyright (C) 2018-2019 Intel Corporation
