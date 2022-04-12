@@ -12,7 +12,7 @@ if MDIO_DEVICE
 
 config MDIO_BUS
 	tristate
-	default m if PHYLIB=m
+	default y if PHYLIB=m
 	default MDIO_DEVICE
 	help
 	  This internal symbol is used for link time dependencies and it
@@ -95,7 +95,7 @@ config MDIO_BUS_MUX_MESON_G12A
 	depends on ARCH_MESON || COMPILE_TEST
 	depends on OF_MDIO && HAS_IOMEM && COMMON_CLK
 	select MDIO_BUS_MUX
-	default m if ARCH_MESON
+	default y if ARCH_MESON
 	help
 	  This module provides a driver for the MDIO multiplexer/glue of
 	  the amlogic g12a SoC. The multiplexers connects either the external

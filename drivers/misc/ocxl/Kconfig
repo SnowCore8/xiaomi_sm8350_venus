@@ -11,7 +11,7 @@ config OCXL
 	tristate "OpenCAPI coherent accelerator support"
 	depends on PPC_POWERNV && PCI && EEH
 	select OCXL_BASE
-	default m
+	default y
 	help
 	  Select this option to enable the ocxl driver for Open
 	  Coherent Accelerator Processor Interface (OpenCAPI) devices.

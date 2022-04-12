@@ -238,7 +238,7 @@ config IRQSOFF_TRACER
 	  This option measures the time spent in irqs-off critical
 	  sections, with microsecond accuracy.
 
-	  The default measurement method is a maximum search, which is
+	  The default yeasurement method is a maximum search, which is
 	  disabled by default and can be runtime (re-)started
 	  via:
 
@@ -263,7 +263,7 @@ config PREEMPT_TRACER
 	  This option measures the time spent in preemption-off critical
 	  sections, with microsecond accuracy.
 
-	  The default measurement method is a maximum search, which is
+	  The default yeasurement method is a maximum search, which is
 	  disabled by default and can be runtime (re-)started
 	  via:
 

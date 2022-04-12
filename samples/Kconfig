@@ -36,7 +36,7 @@ config SAMPLE_KPROBES
 
 config SAMPLE_KRETPROBES
 	tristate "Build kretprobes example -- loadable modules only"
-	default m
+	default y
 	depends on SAMPLE_KPROBES && KRETPROBES
 
 config SAMPLE_HW_BREAKPOINT

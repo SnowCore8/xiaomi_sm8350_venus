@@ -5,7 +5,7 @@
 # setting - SPI can't be modular so that case doesn't need to be covered.
 config SND_SOC_I2C_AND_SPI
 	tristate
-	default m if I2C=m
+	default y if I2C=m
 	default y if I2C=y
 	default y if SPI_MASTER=y
 
@@ -278,16 +278,16 @@ config SND_SOC_ARIZONA
 	default y if SND_SOC_WM5110=y
 	default y if SND_SOC_WM8997=y
 	default y if SND_SOC_WM8998=y
-	default m if SND_SOC_CS47L24=m
-	default m if SND_SOC_WM5102=m
-	default m if SND_SOC_WM5110=m
-	default m if SND_SOC_WM8997=m
-	default m if SND_SOC_WM8998=m
+	default y if SND_SOC_CS47L24=m
+	default y if SND_SOC_WM5102=m
+	default y if SND_SOC_WM5110=m
+	default y if SND_SOC_WM8997=m
+	default y if SND_SOC_WM8998=m
 
 config SND_SOC_WM_HUBS
 	tristate
 	default y if SND_SOC_WM8993=y || SND_SOC_WM8994=y
-	default m if SND_SOC_WM8993=m || SND_SOC_WM8994=m
+	default y if SND_SOC_WM8993=m || SND_SOC_WM8994=m
 
 config SND_SOC_WM_ADSP
 	tristate
@@ -297,11 +297,11 @@ config SND_SOC_WM_ADSP
 	default y if SND_SOC_WM5102=y
 	default y if SND_SOC_WM5110=y
 	default y if SND_SOC_WM2200=y
-	default m if SND_SOC_MADERA=m
-	default m if SND_SOC_CS47L24=m
-	default m if SND_SOC_WM5102=m
-	default m if SND_SOC_WM5110=m
-	default m if SND_SOC_WM2200=m
+	default y if SND_SOC_MADERA=m
+	default y if SND_SOC_CS47L24=m
+	default y if SND_SOC_WM5102=m
+	default y if SND_SOC_WM5110=m
+	default y if SND_SOC_WM2200=m
 
 config SND_SOC_AB8500_CODEC
 	tristate
@@ -736,11 +736,11 @@ config SND_SOC_MADERA
 	default y if SND_SOC_CS47L85=y
 	default y if SND_SOC_CS47L90=y
 	default y if SND_SOC_CS47L92=y
-	default m if SND_SOC_CS47L15=m
-	default m if SND_SOC_CS47L35=m
-	default m if SND_SOC_CS47L85=m
-	default m if SND_SOC_CS47L90=m
-	default m if SND_SOC_CS47L92=m
+	default y if SND_SOC_CS47L15=m
+	default y if SND_SOC_CS47L35=m
+	default y if SND_SOC_CS47L85=m
+	default y if SND_SOC_CS47L90=m
+	default y if SND_SOC_CS47L92=m
 
 config SND_SOC_MAX98088
 	tristate "Maxim MAX98088/9 Low-Power, Stereo Audio Codec"
@@ -919,31 +919,31 @@ config SND_SOC_RL6231
 	default y if SND_SOC_RT1011=y
 	default y if SND_SOC_RT1305=y
 	default y if SND_SOC_RT1308=y
-	default m if SND_SOC_RT5514=m
-	default m if SND_SOC_RT5616=m
-	default m if SND_SOC_RT5640=m
-	default m if SND_SOC_RT5645=m
-	default m if SND_SOC_RT5651=m
-	default m if SND_SOC_RT5659=m
-	default m if SND_SOC_RT5660=m
-	default m if SND_SOC_RT5663=m
-	default m if SND_SOC_RT5665=m
-	default m if SND_SOC_RT5668=m
-	default m if SND_SOC_RT5670=m
-	default m if SND_SOC_RT5677=m
-	default m if SND_SOC_RT5682=m
-	default m if SND_SOC_RT1011=m
-	default m if SND_SOC_RT1305=m
-	default m if SND_SOC_RT1308=m
+	default y if SND_SOC_RT5514=m
+	default y if SND_SOC_RT5616=m
+	default y if SND_SOC_RT5640=m
+	default y if SND_SOC_RT5645=m
+	default y if SND_SOC_RT5651=m
+	default y if SND_SOC_RT5659=m
+	default y if SND_SOC_RT5660=m
+	default y if SND_SOC_RT5663=m
+	default y if SND_SOC_RT5665=m
+	default y if SND_SOC_RT5668=m
+	default y if SND_SOC_RT5670=m
+	default y if SND_SOC_RT5677=m
+	default y if SND_SOC_RT5682=m
+	default y if SND_SOC_RT1011=m
+	default y if SND_SOC_RT1305=m
+	default y if SND_SOC_RT1308=m
 
 config SND_SOC_RL6347A
 	tristate
 	default y if SND_SOC_RT274=y
 	default y if SND_SOC_RT286=y
 	default y if SND_SOC_RT298=y
-	default m if SND_SOC_RT274=m
-	default m if SND_SOC_RT286=m
-	default m if SND_SOC_RT298=m
+	default y if SND_SOC_RT274=m
+	default y if SND_SOC_RT286=m
+	default y if SND_SOC_RT298=m
 
 config SND_SOC_RT274
 	tristate

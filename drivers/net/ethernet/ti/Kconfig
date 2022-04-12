@@ -76,7 +76,7 @@ config TI_CPTS_MOD
 	default y if TI_CPSW=y || TI_KEYSTONE_NETCP=y
 	select NET_PTP_CLASSIFY
 	imply PTP_1588_CLOCK
-	default m
+	default y
 
 config TI_KEYSTONE_NETCP
 	tristate "TI Keystone NETCP Core Support"

@@ -38,7 +38,7 @@ config SND_PS3
 	tristate "PS3 Audio support"
 	depends on PS3_PS3AV
 	select SND_PCM
-	default m
+	default y
 	help
 	  Say Y here to include support for audio on the PS3
 

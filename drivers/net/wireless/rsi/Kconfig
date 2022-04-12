@@ -31,7 +31,7 @@ config RSI_DEBUGFS
 config RSI_SDIO
 	tristate "Redpine Signals SDIO bus support"
 	depends on MMC && RSI_91X
-	default m
+	default y
 	---help---
 	  This option enables the SDIO bus support in rsi drivers.
 	  Select M (recommended), if you have a RSI 1x1 wireless module.
@@ -39,7 +39,7 @@ config RSI_SDIO
 config RSI_USB
 	tristate "Redpine Signals USB bus support"
 	depends on USB && RSI_91X
-	default m
+	default y
 	---help---
 	  This option enables the USB bus support in rsi drivers.
 	  Select M (recommended), if you have a RSI 1x1 wireless module.

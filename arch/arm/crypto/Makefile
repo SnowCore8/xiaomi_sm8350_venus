@@ -19,23 +19,23 @@ ce-obj-$(CONFIG_CRYPTO_GHASH_ARM_CE) += ghash-arm-ce.o
 ce-obj-$(CONFIG_CRYPTO_CRCT10DIF_ARM_CE) += crct10dif-arm-ce.o
 crc-obj-$(CONFIG_CRYPTO_CRC32_ARM_CE) += crc32-arm-ce.o
 
-ifneq ($(crc-obj-y)$(crc-obj-m),)
+ifneq ($(crc-obj-y)$(crc-obj-y),)
 ifeq ($(call as-instr,.arch armv8-a\n.arch_extension crc,y,n),y)
 ce-obj-y += $(crc-obj-y)
-ce-obj-m += $(crc-obj-m)
+ce-obj-y += $(crc-obj-y)
 else
 $(warning These CRC Extensions modules need binutils 2.23 or higher)
-$(warning $(crc-obj-y) $(crc-obj-m))
+$(warning $(crc-obj-y) $(crc-obj-y))
 endif
 endif
 
-ifneq ($(ce-obj-y)$(ce-obj-m),)
+ifneq ($(ce-obj-y)$(ce-obj-y),)
 ifeq ($(call as-instr,.fpu crypto-neon-fp-armv8,y,n),y)
 obj-y += $(ce-obj-y)
-obj-m += $(ce-obj-m)
+obj-y += $(ce-obj-y)
 else
 $(warning These ARMv8 Crypto Extensions modules need binutils 2.23 or higher)
-$(warning $(ce-obj-y) $(ce-obj-m))
+$(warning $(ce-obj-y) $(ce-obj-y))
 endif
 endif
 

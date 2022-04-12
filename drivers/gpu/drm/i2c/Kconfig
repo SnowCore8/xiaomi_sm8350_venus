@@ -4,7 +4,7 @@ menu "I2C encoder or helper chips"
 
 config DRM_I2C_CH7006
 	tristate "Chrontel ch7006 TV encoder"
-	default m if DRM_NOUVEAU
+	default y if DRM_NOUVEAU
 	help
 	  Support for Chrontel ch7006 and similar TV encoders, found
 	  on some nVidia video cards.
@@ -14,7 +14,7 @@ config DRM_I2C_CH7006
 
 config DRM_I2C_SIL164
 	tristate "Silicon Image sil164 TMDS transmitter"
-	default m if DRM_NOUVEAU
+	default y if DRM_NOUVEAU
 	help
 	  Support for sil164 and similar single-link (or dual-link
 	  when used in pairs) TMDS transmitters, used in some nVidia
@@ -22,7 +22,7 @@ config DRM_I2C_SIL164
 
 config DRM_I2C_NXP_TDA998X
 	tristate "NXP Semiconductors TDA998X HDMI encoder"
-	default m if DRM_TILCDC
+	default y if DRM_TILCDC
 	select CEC_CORE if CEC_NOTIFIER
 	select SND_SOC_HDMI_CODEC if SND_SOC
 	help
