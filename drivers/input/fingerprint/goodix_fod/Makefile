@@ -1,7 +1,7 @@
 ifneq ($(KERNELRELEASE),)
 	goodix_fod-objs := gf_spi.o platform.o netlink.o
 	#obj-$(CONFIG_FINGERPRINT_GOODIX_FOD) += goodix_fod.o
-	obj-m += goodix_fod.o
+	obj-y += goodix_fod.o
 else
 	KDIR = $(OUT)/obj/KERNEL_OBJ
 	CROSS_COMPILE = $(ANDROID_TOOLCHAIN)/aarch64-linux-android-

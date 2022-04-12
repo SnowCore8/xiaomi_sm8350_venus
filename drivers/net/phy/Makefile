@@ -45,7 +45,7 @@ obj-$(CONFIG_MDIO_XGENE)	+= mdio-xgene.o
 
 obj-$(CONFIG_SFP)		+= sfp.o
 sfp-obj-$(CONFIG_SFP)		+= sfp-bus.o
-obj-y				+= $(sfp-obj-y) $(sfp-obj-m)
+obj-y				+= $(sfp-obj-y) $(sfp-obj-y)
 
 obj-$(CONFIG_ADIN_PHY)		+= adin.o
 obj-$(CONFIG_AMD_PHY)		+= amd.o

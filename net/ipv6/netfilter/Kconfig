@@ -64,18 +64,18 @@ config NF_DUP_IPV6
 
 config NF_REJECT_IPV6
 	tristate "IPv6 packet rejection"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 
 config NF_LOG_IPV6
 	tristate "IPv6 packet logging"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	select NF_LOG_COMMON
 
 config IP6_NF_IPTABLES
 	tristate "IP6 tables support (required for filtering)"
 	depends on INET && IPV6
 	select NETFILTER_XTABLES
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  ip6tables is a general, extensible packet identification framework.
 	  Currently only the packet filtering and packet mangling subsystem
@@ -134,7 +134,7 @@ config IP6_NF_MATCH_HL
 
 config IP6_NF_MATCH_IPV6HEADER
 	tristate '"ipv6header" IPv6 Extension Headers Match'
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This module allows one to match packets based upon
 	  the ipv6 extension headers.
@@ -190,7 +190,7 @@ config IP6_NF_TARGET_HL
 
 config IP6_NF_FILTER
 	tristate "Packet filtering"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  Packet filtering defines a table `filter', which has a series of
 	  rules for simple packet filtering at local input, forwarding and
@@ -202,7 +202,7 @@ config IP6_NF_TARGET_REJECT
 	tristate "REJECT target support"
 	depends on IP6_NF_FILTER
 	select NF_REJECT_IPV6
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  The REJECT target allows a filtering rule to specify that an ICMPv6
 	  error should be issued in response to an incoming packet, rather
@@ -225,7 +225,7 @@ config IP6_NF_TARGET_SYNPROXY
 
 config IP6_NF_MANGLE
 	tristate "Packet mangling"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This option adds a `mangle' table to iptables: see the man page for
 	  iptables(8).  This table is used for various packet alterations

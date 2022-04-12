@@ -765,7 +765,7 @@ config CRYPTO_DEV_BCM_SPU
 	tristate "Broadcom symmetric crypto/hash acceleration support"
 	depends on ARCH_BCM_IPROC
 	depends on MAILBOX
-	default m
+	default y
 	select CRYPTO_AUTHENC
 	select CRYPTO_LIB_DES
 	select CRYPTO_MD5

@@ -658,7 +658,7 @@ config VIDEO_SECO_RC
 	help
 	  If you say yes here you will get support for the
 	  SECO Boards Consumer-IR in seco-cec driver.
-	  The embedded controller supports RC5 protocol only, default mapping
+	  The embedded controller supports RC5 protocol only, default yapping
 	  is set to rc-hauppauge.
 
 endif #CEC_PLATFORM_DRIVERS

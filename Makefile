@@ -1398,7 +1398,7 @@ endif
 
 # Build modules
 #
-# A module can be listed more than once in obj-m resulting in
+# A module can be listed more than once in obj-y resulting in
 # duplicate lines in modules.order files.  Those are removed
 # using awk while concatenating to the final file.
 

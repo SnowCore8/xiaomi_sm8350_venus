@@ -23,10 +23,10 @@ config COMEDI_DEFAULT_BUF_SIZE_KB
 	  running at 10 kHz has of 2-4 seconds of buffer.
 
 config COMEDI_DEFAULT_BUF_MAXSIZE_KB
-	int "Comedi default maximum asynchronous buffer size in KiB"
+	int "Comedi default yaximum asynchronous buffer size in KiB"
 	default "20480"
 	help
-	  This is the default maximum asynchronous buffer size which can
+	  This is the default yaximum asynchronous buffer size which can
 	  be requested by a userspace program without root privileges.
 	  This is set to 20480 KiB so that a fast I/O card with 16
 	  channels running at 100 kHz has 2-4 seconds of buffer.

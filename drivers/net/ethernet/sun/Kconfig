@@ -73,11 +73,11 @@ config CASSINI
 config SUNVNET_COMMON
 	tristate "Common routines to support Sun Virtual Networking"
 	depends on SUN_LDOMS
-	default m
+	default y
 
 config SUNVNET
 	tristate "Sun Virtual Network support"
-	default m
+	default y
 	depends on SUN_LDOMS
 	depends on SUNVNET_COMMON
 	---help---
@@ -85,7 +85,7 @@ config SUNVNET
 
 config LDMVSW
 	tristate "Sun4v LDoms Virtual Switch support"
-	default m
+	default y
 	depends on SUN_LDOMS
 	depends on SUNVNET_COMMON
 	---help---

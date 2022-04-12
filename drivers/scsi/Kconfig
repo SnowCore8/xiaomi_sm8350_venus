@@ -4,7 +4,7 @@ menu "SCSI device support"
 config SCSI_MOD
        tristate
        default y if SCSI=n || SCSI=y
-       default m if SCSI=m
+       default y if SCSI=m
 
 config RAID_ATTRS
 	tristate "RAID Transport Class"

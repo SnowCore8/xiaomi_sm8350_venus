@@ -378,7 +378,7 @@ config RTC_DRV_MAX77686
 config RTC_DRV_MESON_VRTC
 	tristate "Amlogic Meson Virtual RTC"
 	depends on ARCH_MESON || COMPILE_TEST
-	default m if ARCH_MESON
+	default y if ARCH_MESON
 	help
 	  If you say yes here you will get support for the
 	  Virtual RTC of Amlogic SoCs.
@@ -861,7 +861,7 @@ endif # SPI_MASTER
 #
 config RTC_I2C_AND_SPI
 	tristate
-	default m if I2C=m
+	default y if I2C=m
 	default y if I2C=y
 	default y if SPI_MASTER=y
 
@@ -1923,7 +1923,7 @@ config RTC_DRV_GOLDFISH
 config RTC_DRV_WILCO_EC
 	tristate "Wilco EC RTC"
 	depends on WILCO_EC
-	default m
+	default y
 	help
 	  If you say yes here, you get read/write support for the Real Time
 	  Clock on the Wilco Embedded Controller (Wilco is a kind of Chromebook)

@@ -37,7 +37,7 @@ config NETFILTER_NETLINK_QUEUE
 
 config NETFILTER_NETLINK_LOG
 	tristate "Netfilter LOG over NFNETLINK interface"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	select NETFILTER_NETLINK
 	help
 	  If this option is enabled, the kernel will include support
@@ -57,7 +57,7 @@ config NETFILTER_NETLINK_OSF
 
 config NF_CONNTRACK
 	tristate "Netfilter connection tracking support"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	select NF_DEFRAG_IPV4
 	select NF_DEFRAG_IPV6 if IPV6 != n
 	help
@@ -94,7 +94,7 @@ config NF_CONNTRACK_MARK
 config NF_CONNTRACK_SECMARK
 	bool  'Connection tracking security mark support'
 	depends on NETWORK_SECMARK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This option enables security markings to be applied to
 	  connections.  Typically they are copied to connections from
@@ -216,7 +216,7 @@ config NF_CONNTRACK_AMANDA
 
 config NF_CONNTRACK_FTP
 	tristate "FTP protocol support"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  Tracking FTP connections is problematic: special helpers are
 	  required for tracking them, and doing masquerading and other forms
@@ -248,7 +248,7 @@ config NF_CONNTRACK_H323
 
 config NF_CONNTRACK_IRC
 	tristate "IRC protocol support"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  There is a commonly-used extension to IRC called
 	  Direct Client-to-Client Protocol (DCC).  This enables users to send
@@ -332,7 +332,7 @@ config NF_CONNTRACK_SANE
 
 config NF_CONNTRACK_SIP
 	tristate "SIP protocol support"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  SIP is an application-layer control protocol that can establish,
 	  modify, and terminate multimedia sessions (conferences) such as
@@ -356,7 +356,7 @@ config NF_CONNTRACK_TFTP
 config NF_CT_NETLINK
 	tristate 'Connection tracking netlink interface'
 	select NETFILTER_NETLINK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This option enables support for a netlink-based userspace interface
 
@@ -397,7 +397,7 @@ config NETFILTER_NETLINK_GLUE_CT
 config NF_NAT
 	tristate "Network Address Translation support"
 	depends on NF_CONNTRACK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  The NAT option allows masquerading, port forwarding and other
 	  forms of full Network Address Port Translation. This can be
@@ -576,7 +576,7 @@ config NFT_QUOTA
 	  enforce bytes quotas.
 
 config NFT_REJECT
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	tristate "Netfilter nf_tables reject support"
 	depends on !NF_TABLES_INET || (IPV6!=m || m)
 	help
@@ -713,7 +713,7 @@ config NF_FLOW_TABLE
 
 config NETFILTER_XTABLES
 	tristate "Netfilter Xtables support (required for ip_tables)"
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This is required if you intend to use any of ip_tables,
 	  ip6_tables or arp_tables.
@@ -724,7 +724,7 @@ comment "Xtables combined modules"
 
 config NETFILTER_XT_MARK
 	tristate 'nfmark target and match support'
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	---help---
 	This option adds the "MARK" target and "mark" match.
 
@@ -815,7 +815,7 @@ config NETFILTER_XT_TARGET_CONNMARK
 config NETFILTER_XT_TARGET_CONNSECMARK
 	tristate '"CONNSECMARK" target support'
 	depends on NF_CONNTRACK && NF_CONNTRACK_SECMARK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  The CONNSECMARK target copies security markings from packets
 	  to connections, and restores security markings from connections
@@ -922,7 +922,7 @@ config NETFILTER_XT_TARGET_LOG
 	select NF_LOG_COMMON
 	select NF_LOG_IPV4
 	select NF_LOG_IPV6 if IP6_NF_IPTABLES
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This option adds a `LOG' target, which allows you to create rules in
 	  any iptables table which records the packet header to the syslog.
@@ -958,7 +958,7 @@ config NETFILTER_XT_TARGET_NETMAP
 
 config NETFILTER_XT_TARGET_NFLOG
 	tristate '"NFLOG" target support'
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	select NETFILTER_NETLINK_LOG
 	help
 	  This option enables the NFLOG target, which allows to LOG
@@ -1010,7 +1010,7 @@ config NETFILTER_XT_TARGET_REDIRECT
 config NETFILTER_XT_TARGET_MASQUERADE
 	tristate "MASQUERADE target support"
 	depends on NF_NAT
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	select NF_NAT_MASQUERADE
 	help
 	  Masquerading is a special case of NAT: all outgoing connections are
@@ -1070,7 +1070,7 @@ config NETFILTER_XT_TARGET_TRACE
 config NETFILTER_XT_TARGET_SECMARK
 	tristate '"SECMARK" target support'
 	depends on NETWORK_SECMARK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  The SECMARK target allows security marking of network
 	  packets, for use with security subsystems.
@@ -1080,7 +1080,7 @@ config NETFILTER_XT_TARGET_SECMARK
 config NETFILTER_XT_TARGET_TCPMSS
 	tristate '"TCPMSS" target support'
 	depends on IPV6 || IPV6=n
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	---help---
 	  This option adds a `TCPMSS' target, which allows you to alter the
 	  MSS value of TCP SYN packets, to control the maximum size for that
@@ -1118,7 +1118,7 @@ comment "Xtables matches"
 
 config NETFILTER_XT_MATCH_ADDRTYPE
 	tristate '"addrtype" address type match support'
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	---help---
 	  This option allows you to match what routing thinks of an address,
 	  eg. UNICAST, LOCAL, BROADCAST, ...
@@ -1217,7 +1217,7 @@ config NETFILTER_XT_MATCH_CONNMARK
 config NETFILTER_XT_MATCH_CONNTRACK
 	tristate '"conntrack" connection tracking match support'
 	depends on NF_CONNTRACK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  This is a general conntrack match module, a superset of the state match.
 
@@ -1444,7 +1444,7 @@ config NETFILTER_XT_MATCH_OWNER
 config NETFILTER_XT_MATCH_POLICY
 	tristate 'IPsec "policy" match support'
 	depends on XFRM
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  Policy matching allows you to match packets based on the
 	  IPsec policy that was used during decapsulation/will
@@ -1574,7 +1574,7 @@ config NETFILTER_XT_MATCH_SOCKET
 config NETFILTER_XT_MATCH_STATE
 	tristate '"state" match support'
 	depends on NF_CONNTRACK
-	default m if NETFILTER_ADVANCED=n
+	default y if NETFILTER_ADVANCED=n
 	help
 	  Connection state matching allows you to match packets based on their
 	  relationship to a tracked connection (ie. previous packets).  This

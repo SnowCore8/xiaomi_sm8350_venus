@@ -94,7 +94,7 @@ config PHY_TI_GMII_SEL
 	depends on TI_CPSW || COMPILE_TEST
 	select GENERIC_PHY
 	select REGMAP
-	default m
+	default y
 	help
 	  This driver supports configuring of the TI CPSW Port mode depending on
 	  the Ethernet PHY connected to the CPSW Port.

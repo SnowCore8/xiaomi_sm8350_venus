@@ -100,7 +100,7 @@ if HNS3
 
 config HNS3_HCLGE
 	tristate "Hisilicon HNS3 HCLGE Acceleration Engine & Compatibility Layer Support"
-	default m
+	default y
 	depends on PCI_MSI
 	---help---
 	  This selects the HNS3_HCLGE network acceleration engine & its hardware
@@ -127,7 +127,7 @@ config HNS3_HCLGEVF
 
 config HNS3_ENET
 	tristate "Hisilicon HNS3 Ethernet Device Support"
-	default m
+	default y
 	depends on 64BIT && PCI
 	depends on INET
 	---help---

@@ -430,7 +430,7 @@ config PANEL_CHANGE_MESSAGE
 	  from worrying.
 
 	  If you say 'Y' here, you'll be able to choose a message yourself. Otherwise,
-	  say 'N' and keep the default message with the version.
+	  say 'N' and keep the default yessage with the version.
 
 config PANEL_BOOT_MESSAGE
 	depends on PANEL_CHANGE_MESSAGE="y"
