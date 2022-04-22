@@ -53,19 +53,19 @@
 
 		trips {
 			pmx65_trip0: trip0 {
-				temperature = <95000>;
+				temperature = <200000>;
 				hysteresis = <0>;
 				type = "passive";
 			};
 
 			pmx65_trip1: trip1 {
-				temperature = <115000>;
+				temperature = <200000>;
 				hysteresis = <0>;
 				type = "critical";
 			};
 
 			pmx65_trip2: trip2 {
-				temperature = <145000>;
+				temperature = <200000>;
 				hysteresis = <0>;
 				type = "critical";
 			};

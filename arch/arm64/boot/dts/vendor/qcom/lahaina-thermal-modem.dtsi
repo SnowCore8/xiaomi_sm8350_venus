@@ -165,7 +165,7 @@
 				(QMI_MODEM_INST_ID+QMI_PA)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -180,7 +180,7 @@
 				(QMI_MODEM_INST_ID+QMI_PA_1)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -195,7 +195,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_0)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -210,7 +210,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_1)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -225,7 +225,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_2)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -240,7 +240,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_3)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -255,7 +255,7 @@
 				(QMI_MODEM_INST_ID+QMI_XO_THERM)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -270,7 +270,7 @@
 				(QMI_MODEM_INST_ID+QMI_SYS_THERM_1)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -285,7 +285,7 @@
 				(QMI_MODEM_INST_ID+QMI_SYS_THERM_2)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -300,7 +300,7 @@
 				(QMI_MODEM_INST_ID+QMI_MODEM_TSENS)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -315,7 +315,7 @@
 				(QMI_MODEM_INST_ID+QMI_MODEM_TSENS_1)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -330,7 +330,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_STREAMER_0)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -345,7 +345,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_0_MOD)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -360,7 +360,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_1_MOD)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -375,7 +375,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_2_MOD)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -390,7 +390,7 @@
 				(QMI_MODEM_INST_ID+QMI_QFE_MMW_3_MOD)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -405,7 +405,7 @@
 				(QMI_MODEM_INST_ID+QMI_MMW_PA1)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -420,7 +420,7 @@
 				(QMI_MODEM_INST_ID+QMI_MMW_PA2)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -435,7 +435,7 @@
 				(QMI_MODEM_INST_ID+QMI_MMW_PA3)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -450,7 +450,7 @@
 				(QMI_MODEM_INST_ID+QMI_SDR_MMW)>;
 		trips {
 			active-config0 {
-				temperature = <125000>;
+				temperature = <200000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
@@ -464,19 +464,19 @@
 		thermal-sensors = <&tsens1 9>;
 		trips {
 			mdmss10_config: active-config0 {
-				temperature = <95000>;
+				temperature = <200000>;
 				hysteresis = <3000>;
 				type = "passive";
 			};
 
 			mdmss11_config: active-config1 {
-				temperature = <98000>;
+				temperature = <200000>;
 				hysteresis = <2000>;
 				type = "passive";
 			};
 
 			mdmss12_config: active-config2 {
-				temperature = <105000>;
+				temperature = <200000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -507,19 +507,19 @@
 		thermal-sensors = <&tsens1 10>;
 		trips {
 			mdmss20_config: active-config0 {
-				temperature = <95000>;
+				temperature = <200000>;
 				hysteresis = <3000>;
 				type = "passive";
 			};
 
 			mdmss21_config: active-config1 {
-				temperature = <98000>;
+				temperature = <200000>;
 				hysteresis = <2000>;
 				type = "passive";
 			};
 
 			mdmss22_config: active-config2 {
-				temperature = <105000>;
+				temperature = <200000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};

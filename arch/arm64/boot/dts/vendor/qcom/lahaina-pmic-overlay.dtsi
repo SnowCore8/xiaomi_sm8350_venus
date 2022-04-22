@@ -306,13 +306,13 @@
 
 		trips {
 			xo_config0: active-config0 {
-				temperature = <78000>;
+				temperature = <200000>;
 				hysteresis = <8000>;
 				type = "passive";
 			};
 
 			xo_config1: active-config1 {
-				temperature = <80000>;
+				temperature = <200000>;
 				hysteresis = <10000>;
 				type = "passive";
 			};
